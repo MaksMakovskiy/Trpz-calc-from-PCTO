@@ -3,6 +3,12 @@ var areaButton = document.getElementById("area");
 var tipoButton = document.getElementById("tipo");
 var perimetroButton = document.getElementById("perimetro");
 
+var minInput = document.getElementById("min");
+var maxInput = document.getElementById("max");
+var heightInput = document.getElementById("height");
+
+
+
 svuotaButton.addEventListener('click', function () {
     var form = document.getElementById("form1");
     form.reset();
@@ -60,3 +66,21 @@ perimetroButton.addEventListener("click", function () {
 
     widget.innerHTML = "Perimetro: " + perimetro;
 });
+
+minInput.oninput = function () {
+    if (this.value < 0) {
+        this.value = 0;
+    }
+}
+
+maxInput.oninput = function () {
+    if (this.value < 0) {
+        this.value = 0;
+    }
+}
+
+heightInput.oninput = function () {
+    if (this.value < 0) {
+        this.value = 0;
+    }
+}
