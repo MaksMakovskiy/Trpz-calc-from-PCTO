@@ -16,55 +16,77 @@ svuotaButton.addEventListener('click', function () {
     widget.innerHTML = "";
 });
 
-areaButton.addEventListener("click", function () {
+areaButton.addEventListener("click", async function () {
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
     var height = parseInt(document.getElementById("height").value);
-    var area = (max + min) * height * 0.5;
-    widget.style.display = "block";
-    widget.style.visibility = "visible";
-    if (isNaN(area)) {
-        area = "Non poso calcolare";
+    if (isNaN(min)) { min = 0; }
+    if (isNaN(max)) { max = 0; }
+    if (isNaN(height)) { height = 0; }
+    const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+            'trans': "area",
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ min: min, max: max, height: height })
+    });
+
+    if (response.ok == true) {
+        const json = await response.json();
+        widget.style.visibility = "visible";
+        widget.innerHTML = "Area: " + json.area;
     }
 
-    widget.innerHTML = "Area: " + area;
 });
 
-tipoButton.addEventListener("click", function () {
+tipoButton.addEventListener("click", async function () {
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
     var height = parseInt(document.getElementById("height").value);
-    var type = "";
-    if (isNaN(max) || isNaN(min) || isNaN(height)) {
-        type = "Non poso calcolare";
-    } else {
-        if (min == max && max == height) {
-            type = "square";
-        } else if (min == height || max == height) {
-            type = "rettangolo";
+    if (isNaN(min)) { min = 0; }
+    if (isNaN(max)) { max = 0; }
+    if (isNaN(height)) { height = 0; }
+    const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+            'trans': "type",
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ min: min, max: max, height: height })
+    });
 
-        } else {
-            type = "Trapezio";
-        }
+    if (response.ok == true) {
+        const json = await response.json();
+        widget.style.visibility = "visible";
+        widget.innerHTML = "Tipo: " + json.type;
     }
-    widget.style.display = "block";
-    widget.style.visibility = "visible";
 
-    widget.innerHTML = "Tipo: " + type;
 });
 
-perimetroButton.addEventListener("click", function () {
+perimetroButton.addEventListener("click", async function () {
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
     var height = parseInt(document.getElementById("height").value);
-    var perimetro = min + max + 2 * Math.sqrt(height * height + (max - min) * (max - min));
-    widget.style.display = "block";
-    widget.style.visibility = "visible";
-    if (isNaN(perimetro)) {
-        perimetro = "Non poso calcolare";
+    if (isNaN(min)) { min = 0; }
+    if (isNaN(max)) { max = 0; }
+    if (isNaN(height)) { height = 0; }
+    const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+            'trans': "perimetro",
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ min: min, max: max, height: height })
+    });
+
+    if (response.ok == true) {
+        const json = await response.json();
+        widget.style.visibility = "visible";
+        widget.innerHTML = "Perimetro: " + json.perimetro;
     }
 
-    widget.innerHTML = "Perimetro: " + perimetro;
+
 });
 
 minInput.oninput = function () {
