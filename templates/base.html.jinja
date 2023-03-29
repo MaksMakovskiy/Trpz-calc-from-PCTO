@@ -1,0 +1,32 @@
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='p.png') }}">
+    <title>Trapezzio calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='c.css') }}">
+</head>
+<h1>
+    Trapezzio calculator
+</h1>
+
+<body>
+    <video autoplay loop muted id="background-video">
+        <source src="{{url_for('static', filename='video.mp4')}}" type="video/mp4">
+    </video>
+    <div class="calculator" style="position: center;">
+        <form action="/" method="post" id="form1">
+            <input type="number" id="max" name="max" placeholder="input base majore value"></input><br><br>
+            <input type="number" id="min" name="min" placeholder="input base minore value"></input><br><br>
+            <input type="number" id="height" name="height" placeholder="input altezza value"></input><br><br>
+            <button type="button" value="svuota" id="svuota">svuota</button>
+            <button type="button" value="area" id="area">area</button>
+            <button type="button" value="tipo" id="tipo">tipo</button>
+            <button type="button" value="perimetro" id="perimetro">perimetro</button>
+        </form>
+
+    </div>
+    <br>
+    <div class="widget" name="widget" id="widget"></div>
+</body>
+
+{% block javascript %}
+<script type="text/javascript" src="{{url_for('static', filename='client.js')}}"></script>
+{% endblock %}

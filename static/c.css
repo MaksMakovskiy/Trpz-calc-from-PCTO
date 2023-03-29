@@ -1,0 +1,141 @@
+body {
+    background-image: linear-gradient(to bottom, #cf40f3, #e128f1);
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+    background-size: cover;
+}
+
+#video-container {
+    position: relative;
+}
+
+.widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+    width: 31.5%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    visibility: hidden;
+    position: center;
+}
+
+
+.widget.left {
+    left: 0;
+}
+
+.widget.right {
+    right: 0;
+}
+
+.widget h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.widget p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.calculator input[type="number"],
+.calculator button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    color: #555;
+}
+
+.calculator input[type="number"]:focus,
+.calculator button:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.calculator button {
+    cursor: pointer;
+}
+
+.calculator button#svuota {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.calculator button#area,
+.calculator button#tipo,
+.calculator button#perimetro {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.calculator button#area:hover,
+.calculator button#tipo:hover,
+.calculator button#perimetro:hover {
+    background-color: #3e8e41;
+}
+
+.calculator button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+.calculator button:focus-visible {
+    outline: 2px solid #4caf50;
+}
+
+@media screen and (min-width: 600px) {
+    .calculator {
+        max-width: 600px;
+    }
+}
