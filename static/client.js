@@ -20,9 +20,9 @@ areaButton.addEventListener("click", async function () {
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
     var height = parseInt(document.getElementById("height").value);
-    if (isNaN(min)) { min = 0; }
-    if (isNaN(max)) { max = 0; }
-    if (isNaN(height)) { height = 0; }
+    if (isNaN(min)) { min = 1; }
+    if (isNaN(max)) { max = 1; }
+    if (isNaN(height)) { height = 1; }
     const response = await fetch('/', {
         method: 'POST',
         headers: {
@@ -44,9 +44,9 @@ tipoButton.addEventListener("click", async function () {
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
     var height = parseInt(document.getElementById("height").value);
-    if (isNaN(min)) { min = 0; }
-    if (isNaN(max)) { max = 0; }
-    if (isNaN(height)) { height = 0; }
+    if (isNaN(min)) { min = 1; }
+    if (isNaN(max)) { max = 1; }
+    if (isNaN(height)) { height = 1; }
     const response = await fetch('/', {
         method: 'POST',
         headers: {
@@ -68,9 +68,9 @@ perimetroButton.addEventListener("click", async function () {
     var min = parseInt(document.getElementById("min").value);
     var max = parseInt(document.getElementById("max").value);
     var height = parseInt(document.getElementById("height").value);
-    if (isNaN(min)) { min = 0; }
-    if (isNaN(max)) { max = 0; }
-    if (isNaN(height)) { height = 0; }
+    if (isNaN(min)) { min = 1; }
+    if (isNaN(max)) { max = 1; }
+    if (isNaN(height)) { height = 1; }
     const response = await fetch('/', {
         method: 'POST',
         headers: {
@@ -90,19 +90,19 @@ perimetroButton.addEventListener("click", async function () {
 });
 
 minInput.oninput = function () {
-    if (this.value < 0) {
-        this.value = 0;
+    if (this.value < 1) {
+        this.value = 1;
     }
 }
 
 maxInput.oninput = function () {
-    if (this.value < 0) {
-        this.value = 0;
+    if (this.value < 1) {
+        this.value = 1;
     }
 }
 
 heightInput.oninput = function () {
-    if (this.value < 0) {
-        this.value = 0;
+    if (this.value < 1) {
+        this.value = 1;
     }
 }
