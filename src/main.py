@@ -26,10 +26,12 @@ def main_post():
         if min_s == 0 or max_s == 0 or height_s == 0:
             type = "Non poso calcolare"
         else:
-            type = "Square" if min_s == max_s and min_s == height_s else "Trapezio"
+            type = (
+                "Square" if min_s == max_s and min_s == height_s else "Trapezio"  # noqa
+            )
             type = (
                 "Rettangolo"
-                if type != "Square" and (min_s == height_s or max_s == height_s)
+                if type != "Square" and (min_s == height_s or max_s == height_s)  # noqa
                 else type
             )
         return jsonify(type=type)
