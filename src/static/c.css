@@ -112,6 +112,7 @@ h1 {
     color: #fff;
 }
 
+.calculator button#tipo_get,
 .calculator button#area,
 .calculator button#tipo,
 .calculator button#perimetro {
@@ -119,6 +120,7 @@ h1 {
     color: #fff;
 }
 
+.calculator button#tipo_get:hover,
 .calculator button#area:hover,
 .calculator button#tipo:hover,
 .calculator button#perimetro:hover {

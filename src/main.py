@@ -5,7 +5,24 @@ app = Flask(__name__, static_folder="static")
 
 @app.get("/")
 def main():
-    return render_template("base.html.jinja")
+    print(list(request.headers.keys()))
+    if "Trans" in request.headers.keys():
+        min_s = int(request.args.get("min"))
+        max_s = int(request.args.get("max"))
+        height_s = int(request.args.get("height"))
+        if request.headers["trans"] == "tipo":
+            if min_s == 0 or max_s == 0 or height_s == 0:
+                type = "Non poso calcolare"
+            else:
+                type = "Square" if min_s == max_s and min_s == height_s else "Trapezio"
+                type = (
+                    "Rettangolo"
+                    if type != "Square" and (min_s == height_s or max_s == height_s)
+                    else type
+                )
+            return jsonify(type=type)
+    else:
+        return render_template("base.html.jinja")
 
 
 @app.post("/")
