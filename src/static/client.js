@@ -28,7 +28,7 @@ tipo_getButton.addEventListener("click", async function () {
     const response = await fetch(("/?min=" + min + "&max=" + max + "&height=" + height), {
         method: "GET",
         headers: {
-            'trans': "tipo",
+            'trans': "type",
             'Content-Type': 'application/json'
         },
     });
