@@ -38,7 +38,7 @@ def main_post():
             perimetro=(
                 min_s
                 + max_s
-                + 2 * ((height_s * height_s + (max_s - min_s) * (max_s - min_s)) * 0.5)
+                + 2 * ((height_s**2 + ((min_s - max_s) / 2) ** 2) ** 0.5)
             )
         )
     return None
