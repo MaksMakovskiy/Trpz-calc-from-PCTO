@@ -53,5 +53,10 @@ def main_post():
     return None
 
 
+@app.errorhandler(404)
+def error(error):
+    return render_template("error404.html.jinja")
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
