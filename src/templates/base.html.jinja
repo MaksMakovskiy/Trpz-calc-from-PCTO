@@ -9,7 +9,7 @@
 
 <body>
     <video autoplay loop muted id="background-video">
-        <source src="{{url_for('static', filename='video.mp4')}}" type="video/mp4">
+        <source id="video-source" src="{{url_for('static', filename='video.mp4')}}" type="video/mp4">
     </video>
     <div class="calculator" style="position: center;">
         <form action="/" method="post" id="form1">

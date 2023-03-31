@@ -18,6 +18,13 @@ def main_post():
         min_s = request.json["min"]
         max_s = request.json["max"]
         height_s = request.json["height"]
+    if min_s == -1 or max_s == -1 or height_s == -1:
+        return jsonify(
+            type="Non poso calcolare",
+            perimetro="Non poso calcolare",
+            area="Non poso calcolare",
+        )
+
     if tp == "area":
         return jsonify(
             area=((min_s + max_s) * height_s * 0.5),
