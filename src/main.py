@@ -20,9 +20,9 @@ def main_post():
         height_s = request.json["height"]
     if min_s == -1 or max_s == -1 or height_s == -1:
         return jsonify(
-            type="Non poso calcolare",
-            perimetro="Non poso calcolare",
-            area="Non poso calcolare",
+            type="Cant be calculated",
+            perimetro="Cant be calculated",
+            area="Cant be calculated",
         )
 
     if tp == "area":
@@ -31,7 +31,7 @@ def main_post():
         )
     elif tp == "type":
         if min_s == 0 or max_s == 0 or height_s == 0:
-            type = "Non poso calcolare"
+            type = "Cant be calculated"
         else:
             type = (
                 "Square" if min_s == max_s and min_s == height_s else "Trapezio"  # noqa

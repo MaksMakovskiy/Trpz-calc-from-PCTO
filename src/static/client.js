@@ -25,7 +25,7 @@ svuotaButton.addEventListener('click', function () {
 
 
 function ChangeVideo(type) {
-    if (type == "Non poso calcolare") {
+    if (type == "Cant be calculated") {
         videoSource.src = "static/error-video.mp4";
         video.load();
         video.play();
